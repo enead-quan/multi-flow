@@ -1,0 +1,217 @@
+/* Advanced Animation Library for Multi-Flows */
+
+/* Entrance Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Fluid Dynamics Animations */
+@keyframes fluidMotion {
+    0%, 100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translate(0, 0) rotate(0deg);
+    }
+    20% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        transform: translate(-10px, -5px) rotate(90deg);
+    }
+    40% {
+        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+        transform: translate(5px, -10px) rotate(180deg);
+    }
+    60% {
+        border-radius: 60% 100% 100% 60% / 60% 60% 100% 100%;
+        transform: translate(-5px, 5px) rotate(270deg);
+    }
+    80% {
+        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+        transform: translate(10px, 5px) rotate(360deg);
+    }
+}
+
+@keyframes turbulence {
+    0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
+    10% { transform: translateX(-2px) translateY(-1px) rotate(1deg); }
+    20% { transform: translateX(2px) translateY(1px) rotate(-1deg); }
+    30% { transform: translateX(-1px) translateY(2px) rotate(1deg); }
+    40% { transform: translateX(1px) translateY(-2px) rotate(-1deg); }
+    50% { transform: translateX(-2px) translateY(1px) rotate(1deg); }
+    60% { transform: translateX(2px) translateY(-1px) rotate(-1deg); }
+    70% { transform: translateX(-1px) translateY(-2px) rotate(1deg); }
+    80% { transform: translateX(1px) translateY(2px) rotate(-1deg); }
+    90% { transform: translateX(-2px) translateY(-1px) rotate(1deg); }
+}
+
+/* Two-Phase Flow Specific */
+@keyframes bubbleRise {
+    0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(90vh) scale(1);
+    }
+    50% {
+        transform: translateY(50vh) scale(1.2);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(10vh) scale(0.8);
+    }
+    100% {
+        transform: translateY(-10vh) scale(0.3);
+        opacity: 0;
+    }
+}
+
+@keyframes liquidFlow {
+    0% {
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    }
+    50% {
+        clip-path: polygon(0 60%, 100% 80%, 100% 100%, 0 100%);
+    }
+    100% {
+        clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes vaporization {
+    0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+        filter: blur(0px);
+    }
+    50% {
+        transform: scale(1.5) translateY(-20px);
+        opacity: 0.7;
+        filter: blur(1px);
+    }
+    100% {
+        transform: scale(2) translateY(-50px);
+        opacity: 0;
+        filter: blur(3px);
+    }
+}
+
+/* Animation Classes */
+.animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-fadeInDown {
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.animate-fadeInLeft {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+.animate-fadeInRight {
+    animation: fadeInRight 0.8s ease-out;
+}
+
+.animate-zoomIn {
+    animation: zoomIn 0.6s ease-out;
+}
+
+.animate-fluidMotion {
+    animation: fluidMotion 4s ease-in-out infinite;
+}
+
+.animate-turbulence {
+    animation: turbulence 0.5s ease-in-out infinite;
+}
+
+.animate-bubbleRise {
+    animation: bubbleRise 6s ease-in-out infinite;
+}
+
+.animate-liquidFlow {
+    animation: liquidFlow 2s ease-in-out;
+}
+
+.animate-vaporization {
+    animation: vaporization 3s ease-out infinite;
+}
+
+/* Hover Effects */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hover-glow {
+    transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
+}
+
+/* Delay Classes */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Duration Classes */
+.duration-fast { animation-duration: 0.5s; }
+.duration-normal { animation-duration: 1s; }
+.duration-slow { animation-duration: 2s; }

@@ -1,0 +1,40 @@
+{
+  "name": "multi-flows-website",
+  "version": "1.0.0",
+  "description": "Multi-Flows.com - Advanced Two-Phase Flow Simulation Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --host=localhost",
+    "build": "npm run minify-css && npm run minify-js",
+    "minify-css": "cleancss -o assets/css/main.min.css assets/css/main.css assets/css/animations.css",
+    "minify-js": "uglifyjs assets/js/main.js assets/js/flow-simulation.js -o assets/js/bundle.min.js",
+    "optimize-images": "imagemin assets/images/* --out-dir=assets/images/optimized",
+    "lighthouse": "lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html",
+    "test": "jest",
+    "lint": "eslint assets/js/**/*.js"
+  },
+  "keywords": [
+    "CFD",
+    "two-phase flow",
+    "multiphase simulation",
+    "fluid dynamics",
+    "engineering"
+  ],
+  "author": "Multi-Flows.com",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.0",
+    "eslint": "^8.42.0",
+    "imagemin": "^8.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "jest": "^29.5.0",
+    "lighthouse": "^10.2.0",
+    "live-server": "^1.2.2",
+    "uglify-js": "^3.17.4"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.0",
+    "chart.js": "^4.3.0"
+  }
+}
